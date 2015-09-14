@@ -2,6 +2,7 @@
     <string name="app_name">Busca Tu Curso</string>
     <string name="consulta_nombre">Consultar Materia Por Nombre</string>
     <string name="consulta_codigo">Consultar Materia Por Codigo y Grupo</string>
+    <string name="carga_datos">Cargando los Datos</string>
 
     <string name="action_settings">Settings</string>
 </resources>
