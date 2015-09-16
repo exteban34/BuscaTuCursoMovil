@@ -2,53 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Programador\Documents\GitHub\BuscaTuCursoMovil\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jar="/home/esteban/.ssh/clonar/BuscaTuCursoMovil/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="C:\Users\Programador\Documents\GitHub\BuscaTuCursoMovil\app\build\intermediates\pre-dexed\debug\classes-9713c3f4986ce597793d57b02c199634ea51ace4.jar" />
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/home/esteban/.ssh/clonar/BuscaTuCursoMovil/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-0094c3c9c57ce0479c749fcefd51fdd3ef0c1f97.jar" />
     </item>
     <item
-        jar="C:\Users\Programador\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jar="/home/esteban/.ssh/clonar/BuscaTuCursoMovil/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/home/esteban/.ssh/clonar/BuscaTuCursoMovil/app/build/intermediates/pre-dexed/debug/classes-67ca6c3f79bb323d5c00073850347f728b0b100b.jar" />
+    </item>
+    <item
+        jar="/home/esteban/Software/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\Programador\Downloads\cursos\cursos.git\platforms\BuscaTuCurso\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-3c3daaa889d7ae21357f3908733b546447daf774.jar" />
+        <dex dex="/home/esteban/.ssh/clonar/BuscaTuCursoMovil/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-416d35257168c8023217975a92335162666ad3d8.jar" />
     </item>
     <item
-        jar="C:\Users\Programador\Downloads\cursos\cursos.git\platforms\BuscaTuCurso\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jar="/home/esteban/.ssh/clonar/BuscaTuCursoMovil/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="C:\Users\Programador\Downloads\cursos\cursos.git\platforms\BuscaTuCurso\app\build\intermediates\pre-dexed\debug\classes-fc783897b3ade7bf52380f0a5fcc6a08dfb2d7af.jar" />
-    </item>
-    <item
-        jar="C:\Users\Programador\Documents\GitHub\BuscaTuCursoMovil\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\Programador\Documents\GitHub\BuscaTuCursoMovil\app\build\intermediates\pre-dexed\debug\classes-fb084edf94a2fc5909e207e15852421d232d012b.jar" />
-    </item>
-    <item
-        jar="C:\Users\Programador\Downloads\cursos\cursos.git\platforms\BuscaTuCurso\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\Programador\Downloads\cursos\cursos.git\platforms\BuscaTuCurso\app\build\intermediates\pre-dexed\debug\classes-8436dc7a467173cdd7d4e871a0d5af6f62c875e3.jar" />
-    </item>
-    <item
-        jar="C:\Users\Programador\Downloads\cursos\cursos.git\platforms\BuscaTuCurso\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\Programador\Downloads\cursos\cursos.git\platforms\BuscaTuCurso\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-856184c5c757c09a4c56ccbfa8071d7c59ca19eb.jar" />
-    </item>
-    <item
-        jar="C:\Users\Programador\Documents\GitHub\BuscaTuCursoMovil\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\Programador\Documents\GitHub\BuscaTuCursoMovil\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-fcfa90557b7c426f2b8936db13f09a0c7bbe7099.jar" />
+        <dex dex="/home/esteban/.ssh/clonar/BuscaTuCursoMovil/app/build/intermediates/pre-dexed/debug/classes-da9b4157bca4841edaf8d7267a87f5b45f3395bc.jar" />
     </item>
 
 </items>
