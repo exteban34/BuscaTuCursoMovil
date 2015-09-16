@@ -4,10 +4,16 @@
     <string name="consulta_codigo">Consultar Materia Por Codigo y Grupo</string>
     <string name="carga_datos">Cargando los Datos</string>
     <string name="codigo_curso">Codigo: </string>
+    <string name="nombre_curso">Nombre: </string>
+    <string name="aula_curso">Aula:</string>
+    <string name="profesor_curso">Profesor: </string>
+    <string name="horario_curso">Horario:</string>
     <string name="codigo_curso_hint">Codigo del Curso </string>
+    <string name="nombre_curso_hint">Nombre del curso </string>
     <string name="grupo_curso">Grupo: </string>
     <string name="grupo_curso_hint">Numero de Grupo </string>
     <string name="consultar">Consultar </string>
+
 
     <string name="action_settings">Settings</string>
 </resources>
