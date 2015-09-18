@@ -32,6 +32,7 @@ public class DetalleCurso extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.detalle_consulta);
         curso = (Curso) getIntent().getSerializableExtra("curso");
 
 

@@ -21,7 +21,8 @@
                 style="@style/StyleBotones"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:layout_span="0" />
+                android:layout_span="0"
+                android:onClick="clickCodigo"/>
 
         </TableRow>
 
@@ -45,7 +46,8 @@
                 style="@style/StyleBotones"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                android:layout_column="0" />
+                android:layout_column="0"
+                android:onClick="clickNombre"/>
         </TableRow>
 
     </TableLayout>

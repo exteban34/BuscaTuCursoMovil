@@ -20,6 +20,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:label="Consulta por Nombre de Materia"
+            android:name="com.ionicframework.cursos476803.ConsultaNombreMateria"
+            android:screenOrientation="portrait">
+            <intent-filter >
+                <action android:name="com.ionicframework.cursos476803.ConsultaNombreMateria" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="Consulta por Codigo y Grupo "
+            android:name="com.ionicframework.cursos476803.ConsultaCodigoGrupo"
+            android:screenOrientation="portrait">
+            <intent-filter >
+                <action android:name="com.ionicframework.cursos476803.ConsultaCodigoGrupo" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
