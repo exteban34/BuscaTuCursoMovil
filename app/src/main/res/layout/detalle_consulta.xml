@@ -42,9 +42,6 @@
                 android:layout_height="30px" />
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></TableRow>
 
         <TableRow
             android:layout_width="match_parent"

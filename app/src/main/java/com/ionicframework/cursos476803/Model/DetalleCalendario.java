@@ -14,7 +14,7 @@ public class DetalleCalendario  implements Serializable{
      */
     String aula;
     /**
-     * Contiene el/loss horarios de un curso
+     * Contiene el/los horarios de un curso
      */
     String horarios[];
     /**
