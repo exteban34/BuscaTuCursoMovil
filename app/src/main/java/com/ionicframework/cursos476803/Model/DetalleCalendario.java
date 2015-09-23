@@ -16,11 +16,11 @@ public class DetalleCalendario  implements Serializable{
     /**
      * Contiene el/los horarios de un curso
      */
-    String horarios[];
+    String horarios;
     /**
      * Contiene el/los profesores de un curso
      */
-    String profesores[];
+    String profesores;
 
     /**
      * Constructor
@@ -28,7 +28,7 @@ public class DetalleCalendario  implements Serializable{
      * @param horarios
      * @param profesores
      */
-    public DetalleCalendario(String aula, String[] horarios, String[] profesores) {
+    public DetalleCalendario(String aula, String horarios, String profesores) {
         this.aula = aula;
         this.horarios = horarios;
         this.profesores = profesores;
@@ -47,19 +47,19 @@ public class DetalleCalendario  implements Serializable{
         this.aula = aula;
     }
 
-    public String[] getHorarios() {
+    public String getHorarios() {
         return horarios;
     }
 
-    public void setHorarios(String[] horarios) {
+    public void setHorarios(String horarios) {
         this.horarios = horarios;
     }
 
-    public String[] getProfesores() {
+    public String getProfesores() {
         return profesores;
     }
 
-    public void setProfesores(String[] profesores) {
+    public void setProfesores(String profesores) {
         this.profesores = profesores;
     }
 }

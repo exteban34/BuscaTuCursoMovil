@@ -2,6 +2,8 @@ package com.ionicframework.cursos476803.Model;
 
 import com.ionicframework.cursos476803.DetalleCurso;
 
+import java.util.ArrayList;
+
 /**
  * Clase para el tranporte de datos de Cursos en el sistema
  * @author Heinner Esteban Alvarez Rivas <exteban34@gmail.com>
@@ -22,7 +24,9 @@ public class Curso {
      */
     String nombreMateria;
     String idCurso;
-    DetalleCalendario calendarizacion[];
+
+    ArrayList<DetalleCalendario> calendarizacion;
+
 
 
     /**
@@ -33,7 +37,7 @@ public class Curso {
      * @param idCurso
      * @param calendarizacion
      */
-    public Curso(String codigoMateria, String grupoCurso, String nombreMateria, String idCurso, DetalleCalendario[] calendarizacion) {
+    public Curso(String codigoMateria, String grupoCurso, String nombreMateria, String idCurso, ArrayList<DetalleCalendario> calendarizacion) {
         this.codigoMateria = codigoMateria;
         this.grupoCurso = grupoCurso;
         this.nombreMateria = nombreMateria;
@@ -77,11 +81,11 @@ public class Curso {
         this.idCurso = idCurso;
     }
 
-    public DetalleCalendario[] getCalendarizacion() {
+    public ArrayList<DetalleCalendario> getCalendarizacion() {
         return calendarizacion;
     }
 
-    public void setCalendarizacion(DetalleCalendario[] calendarizacion) {
+    public void setCalendarizacion(ArrayList<DetalleCalendario> calendarizacion) {
         this.calendarizacion = calendarizacion;
     }
 }

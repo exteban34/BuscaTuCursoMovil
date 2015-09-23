@@ -68,7 +68,8 @@
                 style="@style/StyleBotones"
                 android:text="@string/consultar"
                 android:id="@+id/btn_consultarCodigoGrupo"
-                android:layout_span="3" />
+                android:layout_span="3"
+                android:onClick="clickConsultarCodigoCurso"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>
