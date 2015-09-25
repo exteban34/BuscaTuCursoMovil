@@ -5,17 +5,20 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ionicframework.cursos476803.Model.Curso;
 import com.ionicframework.cursos476803.Model.DetalleCalendario;
+import com.ionicframework.cursos476803.util.DataPass;
 import com.ionicframework.cursos476803.util.RequestGetJson;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -50,18 +53,26 @@ public class ConsultaCodigoGrupo extends Activity {
         }
 
         protected void onPostExecute(String result) {
+
+
             try {
                 pDialog.dismiss();
-
-                JSONArray arreglo= new JSONArray(result);
-                Toast.makeText(
-                        getApplicationContext(),arreglo.toString(),
-                        Toast.LENGTH_LONG).show();
+                Log.i("result", result);
                 /**
+                 * implementar una forma acertada para chequear conexion,
+                 * (hacer uso de excepciones personalizadas)
+                if (result==":v"){
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "Al parecer tienes errores de conexion"+"\n"
+                                    +"Verifica tu conexion y vuelve a intentarlo",
+                            Toast.LENGTH_LONG).show();
 
+                } */
+                JSONArray arreglo= new JSONArray(result);
                 JSONObject cursoJson = arreglo.getJSONObject(0);
                 JSONArray calendarizacionJSON = cursoJson.getJSONArray("calendarizacion");
-                ArrayList<DetalleCalendario> calendarizacion = null;
+                ArrayList<DetalleCalendario> calendarizacion = new ArrayList<DetalleCalendario>();
 
 
                 for(int i=0;i<calendarizacionJSON.length();i++){
@@ -86,34 +97,33 @@ public class ConsultaCodigoGrupo extends Activity {
                 String idCurso = cursoJson.getString("id");
                 Curso curso = new Curso(codigoMateria,grupoCurso,nombreMateria,idCurso,calendarizacion);
 
-
-                Toast.makeText(
-                        getApplicationContext(), curso.getNombreMateria()+"\n"+ curso.getCalendarizacion().get(0).getAula()+
-                        curso.getCalendarizacion().get(0).getProfesores(),
-                        Toast.LENGTH_LONG).show();
-                    */
-
+                Intent e= new Intent("com.ionicframework.cursos476803.DetalleCurso");
+                e.putExtra("curso", new DataPass(curso));
+                startActivity(e);
 
 
 
             } catch (Exception e) {
                 Toast.makeText(
                         getApplicationContext(),
-                        "No existe una materia con el codigo y grypo especificado.  \n"
+                        "No existe una materia con el codigo y grupo especificado.  \n"
                                 + "Por favor verifique la informacion ingresada",
                         Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
+
         }
     }
 
 
     public void clickConsultarCodigoCurso (View view){
-
         new LeerJSONCursoCodigoGrupo()
                 .execute("http://172.21.35.139:1337/calendario?materia="
                         +edCodigo.getText().toString()+"&grupo="
                         +edGrupo.getText().toString());
+
+        edCodigo.setText("");
+        edGrupo.setText("");
 
     }
 

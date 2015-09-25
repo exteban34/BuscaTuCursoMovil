@@ -39,6 +39,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:label="Detalle del Curso"
+            android:name="com.ionicframework.cursos476803.DetalleCurso"
+            android:screenOrientation="portrait">
+            <intent-filter >
+                <action android:name="com.ionicframework.cursos476803.DetalleCurso" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

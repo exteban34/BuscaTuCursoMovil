@@ -3,6 +3,7 @@ package com.ionicframework.cursos476803;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,5 +46,10 @@ public class MainActivity extends AppCompatActivity {
     public void clickNombre(View view){
         Intent e = new Intent("com.ionicframework.cursos476803.ConsultaNombreMateria");
         startActivity(e);
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }

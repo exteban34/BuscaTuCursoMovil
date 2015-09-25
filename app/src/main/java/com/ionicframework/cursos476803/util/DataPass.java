@@ -14,12 +14,21 @@ import java.util.ArrayList;
 
 public class DataPass implements Serializable{
     private ArrayList<Curso> cursos;
+    private Curso curso;
 
     public DataPass(ArrayList<Curso> data) {
         this.cursos = data;
     }
 
+    public DataPass(Curso curso) {
+        this.curso = curso;
+    }
+
     public ArrayList<Curso> getCursos() {
         return this.cursos;
+    }
+
+    public Curso getCurso() {
+        return curso;
     }
 }

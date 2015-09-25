@@ -2,6 +2,7 @@ package com.ionicframework.cursos476803.Model;
 
 import com.ionicframework.cursos476803.DetalleCurso;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  * @version 1.0 25/02/2015
  *
  */
-public class Curso {
+public class Curso implements Serializable{
     /**
      * Contiene el  codigo de la materia  a la que pertenece el curso
      */
