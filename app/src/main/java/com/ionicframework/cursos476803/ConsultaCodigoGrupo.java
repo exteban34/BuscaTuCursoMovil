@@ -117,13 +117,22 @@ public class ConsultaCodigoGrupo extends Activity {
 
 
     public void clickConsultarCodigoCurso (View view){
-        new LeerJSONCursoCodigoGrupo()
-                .execute("http://172.21.35.139:1337/calendario?materia="
-                        +edCodigo.getText().toString()+"&grupo="
-                        +edGrupo.getText().toString());
+        String codigo = edCodigo.getText().toString();
+        String grupo = edGrupo.getText().toString();
+        if(codigo.isEmpty() || grupo.isEmpty()){
+            Toast.makeText(
+                    getApplication(), "Por favor ingrese toda la información",
+                    Toast.LENGTH_LONG).show();
+        }else{
+            new LeerJSONCursoCodigoGrupo()
+                    .execute("http://172.21.35.139:1337/calendario?materia="
+                            +codigo+"&grupo="
+                            +grupo);
 
-        edCodigo.setText("");
-        edGrupo.setText("");
+            edCodigo.setText("");
+            edGrupo.setText("");
+        }
+
 
     }
 

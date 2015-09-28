@@ -27,7 +27,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/edtTxt_codigoCurso"
                 android:layout_column="2"
-                android:hint="@string/codigo_curso_hint" />
+                android:hint="@string/codigo_curso_hint"
+                android:inputType="numberDecimal"
+                android:maxLength="7"/>
         </TableRow>
 
         <TableRow
@@ -47,7 +49,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/edtTxt_grupoCurso"
                 android:layout_column="2"
-                android:hint="@string/grupo_curso_hint" />
+                android:hint="@string/grupo_curso_hint"
+                android:inputType="numberDecimal"
+                android:maxLength="2"/>
         </TableRow>
 
         <TableRow
