@@ -13,6 +13,12 @@
     <string name="grupo_curso">Grupo: </string>
     <string name="grupo_curso_hint">Numero de Grupo </string>
     <string name="consultar">Consultar </string>
+    <string name="error_consulta_Codigo_Grupo">No existe una materia con el codigo y grupo especificado.
+    \nPor favor verifique la informacion ingresada.</string>
+    <string name="error_ingresar_codigo_grupo">Por favor ingrese toda la información</string>
+    <string name="error_consulta_nombre_materia">No existe una materia con el nombre especificado.
+    \nPor favor verifique la informacion ingresada.</string>
+    <string name="error_ingresar_nombre_materia">Por favor ingrese el nombre de la materia.</string>
 
 
     <string name="action_settings">Settings</string>

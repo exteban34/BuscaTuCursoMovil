@@ -106,8 +106,7 @@ public class ConsultaCodigoGrupo extends Activity {
             } catch (Exception e) {
                 Toast.makeText(
                         getApplicationContext(),
-                        "No existe una materia con el codigo y grupo especificado.  \n"
-                                + "Por favor verifique la informacion ingresada",
+                        getResources().getString(R.string.error_consulta_Codigo_Grupo),
                         Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
@@ -121,12 +120,14 @@ public class ConsultaCodigoGrupo extends Activity {
         String grupo = edGrupo.getText().toString();
         if(codigo.isEmpty() || grupo.isEmpty()){
             Toast.makeText(
-                    getApplication(), "Por favor ingrese toda la información",
+                    getApplication(), getResources().getString(R.string.error_ingresar_codigo_grupo),
                     Toast.LENGTH_LONG).show();
         }else{
             new LeerJSONCursoCodigoGrupo()
-                    .execute("http://172.21.35.139:1337/calendario?materia="
-                            +codigo+"&grupo="
+                    .execute(getResources().getString(R.string.urlService)
+                            +getResources().getString(R.string.urlConsultaCodigo)
+                            +codigo
+                            +getResources().getString(R.string.urlConsultaGrupo)
                             +grupo);
 
             edCodigo.setText("");

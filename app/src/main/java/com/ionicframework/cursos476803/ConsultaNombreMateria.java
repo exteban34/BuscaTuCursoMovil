@@ -105,8 +105,7 @@ public class ConsultaNombreMateria extends Activity {
             } catch (Exception e) {
                 Toast.makeText(
                         getApplicationContext(),
-                        "No existe una materia con el nombre especificado.  \n"
-                                + "Por favor verifique la informacion ingresada",
+                        getResources().getString(R.string.error_consulta_nombre_materia),
                         Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
@@ -126,11 +125,12 @@ public class ConsultaNombreMateria extends Activity {
         String nombreMateria = edNombreMateria.getText().toString();
         if(nombreMateria.isEmpty()){
             Toast.makeText(
-                    getApplication(), "Por favor ingrese el nombre de la materia",
+                    getApplication(),getResources().getString(R.string.error_ingresar_nombre_materia),
                     Toast.LENGTH_LONG).show();
         } else{
             new LeerJSONNombreMateria()
-                    .execute("http://172.21.35.139:1337/calendario?nombreMateria="
+                    .execute(getResources().getString(R.string.urlService)
+                            +getResources().getString(R.string.urlConsultaMateria)
                             +nombreMateria);
 
             edNombreMateria.setText("");

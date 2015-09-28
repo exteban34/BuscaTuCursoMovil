@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="urlService">http://172.21.35.139:1337/calendario?</string>
+    <string name="urlConsultaCodigo">&amp;materia=</string>
+    <string name="urlConsultaGrupo">&amp;grupo=</string>
+    <string name="urlConsultaMateria">&amp;nombreMateria=</string>
+</resources>
