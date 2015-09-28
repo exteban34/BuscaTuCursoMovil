@@ -27,7 +27,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/edtTxt_nombreCurso"
                 android:layout_column="2"
-                android:hint="@string/nombre_curso_hint" />
+                android:hint="@string/nombre_curso_hint"
+                android:inputType="text"/>
         </TableRow>
 
         <TableRow

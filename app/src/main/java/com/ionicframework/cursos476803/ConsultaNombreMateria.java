@@ -123,11 +123,18 @@ public class ConsultaNombreMateria extends Activity {
     }
 
     public void clickConsultarPorNombre(View view){
-        new LeerJSONNombreMateria()
-                .execute("http://172.21.35.139:1337/calendario?nombreMateria="
-                        +edNombreMateria.getText().toString());
+        String nombreMateria = edNombreMateria.getText().toString();
+        if(nombreMateria.isEmpty()){
+            Toast.makeText(
+                    getApplication(), "Por favor ingrese el nombre de la materia",
+                    Toast.LENGTH_LONG).show();
+        } else{
+            new LeerJSONNombreMateria()
+                    .execute("http://172.21.35.139:1337/calendario?nombreMateria="
+                            +nombreMateria);
 
-        edNombreMateria.setText("");
+            edNombreMateria.setText("");
+        }
     }
 
 }
