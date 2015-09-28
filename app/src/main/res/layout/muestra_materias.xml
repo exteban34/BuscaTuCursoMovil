@@ -4,35 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--<TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Space
-                android:layout_width="20px"
-                android:layout_height="25dp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Nombre del curso"
-                android:id="@+id/txtVw_nombreCurso"
-                android:layout_column="2" />
-        </TableRow>
-
-    </TableLayout>-->
     <Space
         android:layout_width="20px"
         android:layout_height="25dp" />
