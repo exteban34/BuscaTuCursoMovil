@@ -25,7 +25,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/edtTxt_grupoCurso"
+                android:id="@+id/edtTxt_nombreCurso"
                 android:layout_column="2"
                 android:hint="@string/nombre_curso_hint" />
         </TableRow>
@@ -48,7 +48,8 @@
                 style="@style/StyleBotones"
                 android:text="@string/consultar"
                 android:id="@+id/btn_consultarNombreGrupo"
-                android:layout_span="3" />
+                android:layout_span="3"
+                android:onClick="clickConsultarPorNombre"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>
