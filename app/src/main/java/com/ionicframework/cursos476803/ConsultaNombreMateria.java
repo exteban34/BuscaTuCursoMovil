@@ -53,7 +53,7 @@ public class ConsultaNombreMateria extends Activity {
 
             try {
                 pDialog.dismiss();
-                Log.i("result", result);
+                Log.i("result to Http GET", result);
                 /**
                  * implementar una forma acertada para chequear conexion,
                  * (hacer uso de excepciones personalizadas)
@@ -66,7 +66,6 @@ public class ConsultaNombreMateria extends Activity {
 
                  } */
                 JSONArray arreglo= new JSONArray(result);
-
                 ArrayList<Curso> cursos = new ArrayList<>();
                 for (int l=0; l<arreglo.length();l++) {
                     JSONObject cursoJson = arreglo.getJSONObject(l);
@@ -95,9 +94,9 @@ public class ConsultaNombreMateria extends Activity {
                     Curso curso = new Curso(codigoMateria, grupoCurso, nombreMateria, idCurso, calendarizacion);
                     cursos.add(curso);
                 }
-                Intent e= new Intent("com.ionicframework.cursos476803.DetalleCurso");
+                Intent e= new Intent("com.ionicframework.cursos476803.ListaMaterias");
                 e.putExtra("cursos", new DataPass(cursos));
-                e.putExtra("nombreMateria", edNombreMateria.getText().toString());
+                e.putExtra("nombreMateria", cursos.get(0).getNombreMateria());
                 startActivity(e);
 
 
@@ -128,6 +127,12 @@ public class ConsultaNombreMateria extends Activity {
                     getApplication(),getResources().getString(R.string.error_ingresar_nombre_materia),
                     Toast.LENGTH_LONG).show();
         } else{
+
+            /**
+             * Consulta de prueba, eliminar luego del token
+             */
+            nombreMateria="fisica%20de%20campos";
+            Log.i("consulta",nombreMateria);
             new LeerJSONNombreMateria()
                     .execute(getResources().getString(R.string.urlService)
                             +getResources().getString(R.string.urlConsultaMateria)
