@@ -19,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 /**
  * Created by Programador on 18/09/2015.
@@ -127,12 +128,7 @@ public class ConsultaNombreMateria extends Activity {
                     getApplication(),getResources().getString(R.string.error_ingresar_nombre_materia),
                     Toast.LENGTH_LONG).show();
         } else{
-
-            /**
-             * Consulta de prueba, eliminar luego del token
-             */
-            nombreMateria="fisica%20de%20campos";
-            Log.i("consulta",nombreMateria);
+            nombreMateria=nombreMateria.replace(" ", "%20");
             new LeerJSONNombreMateria()
                     .execute(getResources().getString(R.string.urlService)
                             +getResources().getString(R.string.urlConsultaMateria)
