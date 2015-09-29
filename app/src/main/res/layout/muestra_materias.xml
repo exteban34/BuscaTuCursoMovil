@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Horario del curso"
-                android:id="@+id/txtVw_mostrarHorario"
+                android:id="@+id/txtVw_horarioCurso"
                 android:gravity="center"/>
         </TableRow>
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Profesor del grupo"
-                android:id="@+id/txtVw_mostrarProfesor"
+                android:id="@+id/txtVw_profesorCurso"
                 android:gravity="center"/>
         </TableRow>
 
