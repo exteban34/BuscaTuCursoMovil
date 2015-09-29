@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ionicframework.cursos476803.Model.Curso;
 import com.ionicframework.cursos476803.util.DataPass;
@@ -47,11 +46,11 @@ public class ListaMaterias extends Activity {
                     if (tvGrupo != null){
                         tvGrupo.setText(curso.getGrupoCurso());
                     }
-                    TextView tvHorario = (TextView) view.findViewById(R.id.txtVw_mostrarHorario);
+                    TextView tvHorario = (TextView) view.findViewById(R.id.txtVw_horarioCurso);
                     if (tvHorario != null){
                         tvHorario.setText(curso.getCalendarizacion().get(0).getHorarios());
                     }
-                    TextView tvProfesor = (TextView) view.findViewById(R.id.txtVw_mostrarProfesor);
+                    TextView tvProfesor = (TextView) view.findViewById(R.id.txtVw_profesorCurso);
                     if (tvProfesor != null){
                         tvProfesor.setText(curso.getCalendarizacion().get(0).getProfesores());
                     }
