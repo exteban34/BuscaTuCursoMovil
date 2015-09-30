@@ -1,18 +1,19 @@
 package com.ionicframework.cursos476803;
-
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-
-
 import com.ionicframework.cursos476803.Model.Curso;
 import com.ionicframework.cursos476803.util.DataPass;
 
-
 /**
- * Created by Programador on 14/09/2015.
+ * Clase encargada de mostrar el detalle de los cursos
+ *
+ * @author Heinner Esteban Alvarez <exteban34@gmail.com>
+ * @author Yoiner Esteban Gomez <yoiner.gomez22@gmail.com>
+ * @version 1.0 30/09/2015
+ *
  */
-public class DetalleCurso extends Activity {
+public class DetalleCurso extends AppCompatActivity {
 
 
 
@@ -21,7 +22,6 @@ public class DetalleCurso extends Activity {
     private TextView tvProfesor;
     private TextView tvHorario;
     private TextView tvGrupo;
-
     Curso curso;
 
 
@@ -33,13 +33,7 @@ public class DetalleCurso extends Activity {
         DataPass dp = (DataPass) getIntent().getSerializableExtra("curso");
         curso = dp.getCurso() ;
 
-/*        Toast.makeText(
-                getApplicationContext(), curso.getNombreMateria() + "\n"
-                        + curso.getIdCurso() + "\n"
-                        + curso.getCalendarizacion().get(0).getAula() + "\n"
-                        + curso.getCalendarizacion().get(0).getProfesores() + "\n"
-                        + curso.getCalendarizacion().get(0).getHorarios(),
-                Toast.LENGTH_LONG).show();*/
+
 
         asignaDetalleCurso();
     }

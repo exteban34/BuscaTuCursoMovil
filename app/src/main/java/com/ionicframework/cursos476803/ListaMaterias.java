@@ -1,24 +1,27 @@
 package com.ionicframework.cursos476803;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.ionicframework.cursos476803.Model.Curso;
 import com.ionicframework.cursos476803.util.DataPass;
 import com.ionicframework.cursos476803.util.ListaAdaptador;
-
 import java.util.ArrayList;
 
+
 /**
- * Created by Programador on 28/09/2015.
+ * Clase encargada de mostrar el listado de cursos consultados por un nombre de materia.
+ *
+ * @author Heinner Esteban Alvarez <exteban34@gmail.com>
+ * @author Yoiner Esteban Gomez <yoiner.gomez22@gmail.com>
+ * @version 1.0 30/09/2015
+ *
  */
-public class ListaMaterias extends Activity {
+public class ListaMaterias extends AppCompatActivity {
 
     ArrayList<Curso> cursos;
     String nombreMateria;
@@ -58,6 +61,7 @@ public class ListaMaterias extends Activity {
 
             }
         });
+
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> pariente, View view,

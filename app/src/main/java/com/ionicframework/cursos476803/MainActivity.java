@@ -1,42 +1,28 @@
 package com.ionicframework.cursos476803;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
+/**
+ * MainActivity, provee dos botones con las opciones para consultar un curso por su codigo y grupo, o
+ * por el nombre de la materia.
+ *
+ * @author Heinner Esteban Alvarez <exteban34@gmail.com>
+ * @author Yoiner Esteban Gomez <yoiner.gomez22@gmail.com>
+ * @version 1.0 30/09/2015
+ *
+ */
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     public void clickCodigo(View view){
         Intent e = new Intent("com.ionicframework.cursos476803.ConsultaCodigoGrupo");

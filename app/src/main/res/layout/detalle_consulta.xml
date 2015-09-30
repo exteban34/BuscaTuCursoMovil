@@ -30,7 +30,8 @@
                 android:text="Nombre curso"
                 android:id="@+id/txtVw_nombreCurso"
                 android:layout_column="0"
-                android:layout_span="3" />
+                android:layout_span="3"
+                android:gravity="center_horizontal" />
         </TableRow>
 
         <TableRow

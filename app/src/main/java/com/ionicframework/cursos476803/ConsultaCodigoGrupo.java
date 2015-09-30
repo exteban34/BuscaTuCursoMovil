@@ -1,30 +1,41 @@
 package com.ionicframework.cursos476803;
-
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.ionicframework.cursos476803.Model.Curso;
 import com.ionicframework.cursos476803.Model.DetalleCalendario;
 import com.ionicframework.cursos476803.util.DataPass;
 import com.ionicframework.cursos476803.util.RequestGetJson;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.Serializable;
+/**
+ * Clase Encargada de realizar la consulta de diferentes cursos con el nombre de la materia,
+ * provee un campo para digitar dicho nombre.
+ *
+ * @author Heinner Esteban Alvarez <exteban34@gmail.com>
+ * @author Yoiner Esteban Gomez <yoiner.gomez22@gmail.com>
+ * @version 1.0 30/09/2015
+ *
+ */
 import java.util.ArrayList;
 
 /**
- * Created by Programador on 18/09/2015.
+ * Clase Encargada de realizar la consulta de un curso dado el codigo de la materia
+ * y el grupo, provee campos para digitar dicha informacion.
+ *
+ * @author Heinner Esteban Alvarez <exteban34@gmail.com>
+ * @author Yoiner Esteban Gomez <yoiner.gomez22@gmail.com>
+ * @version 1.0 30/09/2015
+ *
  */
-public class ConsultaCodigoGrupo extends Activity {
+public class ConsultaCodigoGrupo extends AppCompatActivity {
 
     ProgressDialog pDialog;
     EditText edCodigo;
@@ -39,7 +50,16 @@ public class ConsultaCodigoGrupo extends Activity {
     }
 
 
+    /**
+     * Clase Asincrona encargada de consultar el onjeto JSON  con el curso y lanzar la actividad que provee
+     * la visualizacion del detalle del curso.
+     *
+     * @author Heinner Esteban Alvarez <exteban34@gmail.com>
+     * @author Yoiner Esteban Gomez <yoiner.gomez22@gmail.com>
+     * @version 1.0 30/09/2015
+     */
     private class LeerJSONCursoCodigoGrupo extends AsyncTask<String, Void, String> {
+
         protected void onPreExecute() {
             pDialog = new ProgressDialog(ConsultaCodigoGrupo.this);
             pDialog.setMessage(getString(R.string.carga_datos));
@@ -58,17 +78,6 @@ public class ConsultaCodigoGrupo extends Activity {
             try {
                 pDialog.dismiss();
                 Log.i("result", result);
-                /**
-                 * implementar una forma acertada para chequear conexion,
-                 * (hacer uso de excepciones personalizadas)
-                if (result==":v"){
-                    Toast.makeText(
-                            getApplicationContext(),
-                            "Al parecer tienes errores de conexion"+"\n"
-                                    +"Verifica tu conexion y vuelve a intentarlo",
-                            Toast.LENGTH_LONG).show();
-
-                } */
                 JSONArray arreglo= new JSONArray(result);
                 JSONObject cursoJson = arreglo.getJSONObject(0);
                 JSONArray calendarizacionJSON = cursoJson.getJSONArray("calendarizacion");
@@ -82,21 +91,24 @@ public class ConsultaCodigoGrupo extends Activity {
                     String horarios="";
                     JSONArray horariosJSON = detalleCursoJSON.getJSONArray("horario");
                     JSONArray profesoresJSON = detalleCursoJSON.getJSONArray("profesor");
+
                     for(int j=0;j<horariosJSON.length();j++){
                         horarios=horarios+"\n"+horariosJSON.getString(j);
                     }
+
                     for(int k=0;k<horariosJSON.length();k++){
                         profesores=profesores+"\n"+profesoresJSON.getString(k);
                     }
+
                     DetalleCalendario detalleCalendario = new DetalleCalendario(aula,horarios,profesores);
                     calendarizacion.add(detalleCalendario);
                 }
+
                 String codigoMateria = cursoJson.getString("materia");
                 String grupoCurso = cursoJson.getString("grupo");
                 String nombreMateria = cursoJson.getString("nombreMateria");
                 String idCurso = cursoJson.getString("id");
                 Curso curso = new Curso(codigoMateria,grupoCurso,nombreMateria,idCurso,calendarizacion);
-
                 Intent e= new Intent("com.ionicframework.cursos476803.DetalleCurso");
                 e.putExtra("curso", new DataPass(curso));
                 startActivity(e);
