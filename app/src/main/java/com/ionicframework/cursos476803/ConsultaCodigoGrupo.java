@@ -3,6 +3,8 @@ package com.ionicframework.cursos476803;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,9 +18,12 @@ import com.ionicframework.cursos476803.util.DataPass;
 import com.ionicframework.cursos476803.util.RequestGetJson;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.net.ConnectException;
 import java.util.ArrayList;
 
 /**
@@ -40,6 +45,7 @@ public class ConsultaCodigoGrupo extends Activity {
 
 
     private class LeerJSONCursoCodigoGrupo extends AsyncTask<String, Void, String> {
+
         protected void onPreExecute() {
             pDialog = new ProgressDialog(ConsultaCodigoGrupo.this);
             pDialog.setMessage(getString(R.string.carga_datos));
@@ -103,12 +109,18 @@ public class ConsultaCodigoGrupo extends Activity {
 
 
 
-            } catch (Exception e) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        getResources().getString(R.string.error_consulta_Codigo_Grupo),
-                        Toast.LENGTH_LONG).show();
-                e.printStackTrace();
+            }catch (JSONException e) {
+                if (e.getMessage().contains("Index")) {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            getResources().getString(R.string.error_consulta_Codigo_Grupo),
+                            Toast.LENGTH_LONG).show();
+                } else{
+                    Toast.makeText(
+                            getApplicationContext(),
+                            getResources().getString(R.string.error_conexion_internet),
+                            Toast.LENGTH_LONG).show();
+                }
             }
 
         }
