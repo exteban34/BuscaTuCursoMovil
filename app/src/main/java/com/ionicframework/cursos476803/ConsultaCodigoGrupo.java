@@ -13,17 +13,8 @@ import com.ionicframework.cursos476803.Model.DetalleCalendario;
 import com.ionicframework.cursos476803.util.DataPass;
 import com.ionicframework.cursos476803.util.RequestGetJson;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
-
-/**
- * Clase Encargada de realizar la consulta de diferentes cursos con el nombre de la materia,
- * provee un campo para digitar dicho nombre.
- *
- * @author Heinner Esteban Alvarez <exteban34@gmail.com>
- * @author Yoiner Esteban Gomez <yoiner.gomez22@gmail.com>
- * @version 1.0 30/09/2015
- *
- */
 import java.util.ArrayList;
 
 /**
@@ -115,12 +106,18 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
 
 
 
-            } catch (Exception e) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        getResources().getString(R.string.error_consulta_Codigo_Grupo),
-                        Toast.LENGTH_LONG).show();
-                e.printStackTrace();
+            }catch (JSONException e) {
+                if (e.getMessage().contains("Index")) {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            getResources().getString(R.string.error_consulta_Codigo_Grupo),
+                            Toast.LENGTH_LONG).show();
+                } else{
+                    Toast.makeText(
+                            getApplicationContext(),
+                            getResources().getString(R.string.error_conexion_internet),
+                            Toast.LENGTH_LONG).show();
+                }
             }
 
         }

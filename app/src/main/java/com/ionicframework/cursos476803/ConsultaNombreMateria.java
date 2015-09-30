@@ -13,6 +13,7 @@ import com.ionicframework.cursos476803.Model.DetalleCalendario;
 import com.ionicframework.cursos476803.util.DataPass;
 import com.ionicframework.cursos476803.util.RequestGetJson;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 
@@ -108,12 +109,18 @@ public class ConsultaNombreMateria extends AppCompatActivity {
 
 
 
-            } catch (Exception e) {
-                Toast.makeText(
-                        getApplicationContext(),
-                        getResources().getString(R.string.error_consulta_nombre_materia),
-                        Toast.LENGTH_LONG).show();
-                e.printStackTrace();
+            } catch (JSONException e) {
+                if (e.getMessage().contains("Index")) {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            getResources().getString(R.string.error_consulta_Codigo_Grupo),
+                            Toast.LENGTH_LONG).show();
+                } else{
+                    Toast.makeText(
+                            getApplicationContext(),
+                            getResources().getString(R.string.error_conexion_internet),
+                            Toast.LENGTH_LONG).show();
+                }
             }
 
         }
