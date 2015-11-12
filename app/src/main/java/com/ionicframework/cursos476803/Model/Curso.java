@@ -24,7 +24,6 @@ public class Curso implements Serializable{
      * Contiene el nombre de la materia a la que pertenece el curso
      */
     String nombreMateria;
-    String idCurso;
 
     ArrayList<DetalleCalendario> calendarizacion;
 
@@ -35,14 +34,12 @@ public class Curso implements Serializable{
      * @param codigoMateria
      * @param grupoCurso
      * @param nombreMateria
-     * @param idCurso
      * @param calendarizacion
      */
-    public Curso(String codigoMateria, String grupoCurso, String nombreMateria, String idCurso, ArrayList<DetalleCalendario> calendarizacion) {
+    public Curso(String codigoMateria, String grupoCurso, String nombreMateria, ArrayList<DetalleCalendario> calendarizacion) {
         this.codigoMateria = codigoMateria;
         this.grupoCurso = grupoCurso;
         this.nombreMateria = nombreMateria;
-        this.idCurso = idCurso;
         this.calendarizacion = calendarizacion;
     }
 
@@ -72,14 +69,6 @@ public class Curso implements Serializable{
 
     public void setNombreMateria(String nombreMateria) {
         this.nombreMateria = nombreMateria;
-    }
-
-    public String getIdCurso() {
-        return idCurso;
-    }
-
-    public void setIdCurso(String idCurso) {
-        this.idCurso = idCurso;
     }
 
     public ArrayList<DetalleCalendario> getCalendarizacion() {

@@ -74,22 +74,11 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
                 JSONArray calendarizacionJSON = cursoJson.getJSONArray("calendarizacion");
                 ArrayList<DetalleCalendario> calendarizacion = new ArrayList<DetalleCalendario>();
 
-
                 for(int i=0;i<calendarizacionJSON.length();i++){
                     JSONObject detalleCursoJSON = calendarizacionJSON.getJSONObject(i);
                     String aula= (String) detalleCursoJSON.get("aula");
-                    String profesores="";
-                    String horarios="";
-                    JSONArray horariosJSON = detalleCursoJSON.getJSONArray("horario");
-                    JSONArray profesoresJSON = detalleCursoJSON.getJSONArray("profesor");
-
-                    for(int j=0;j<horariosJSON.length();j++){
-                        horarios=horarios+"\n"+horariosJSON.getString(j);
-                    }
-
-                    for(int k=0;k<horariosJSON.length();k++){
-                        profesores=profesores+"\n"+profesoresJSON.getString(k);
-                    }
+                    String profesores= (String) detalleCursoJSON.get("profesor")+"\n";
+                    String horarios= (String) detalleCursoJSON.get("horario")+"\n";
 
                     DetalleCalendario detalleCalendario = new DetalleCalendario(aula,horarios,profesores);
                     calendarizacion.add(detalleCalendario);
@@ -98,13 +87,10 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
                 String codigoMateria = cursoJson.getString("materia");
                 String grupoCurso = cursoJson.getString("grupo");
                 String nombreMateria = cursoJson.getString("nombreMateria");
-                String idCurso = cursoJson.getString("id");
-                Curso curso = new Curso(codigoMateria,grupoCurso,nombreMateria,idCurso,calendarizacion);
+                Curso curso = new Curso(codigoMateria,grupoCurso,nombreMateria,calendarizacion);
                 Intent e= new Intent("com.ionicframework.cursos476803.DetalleCurso");
                 e.putExtra("curso", new DataPass(curso));
                 startActivity(e);
-
-
 
             }catch (JSONException e) {
                 if (e.getMessage().contains("Index")) {
@@ -125,6 +111,9 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
 
 
     public void clickConsultarCodigoCurso (View view){
+        String facultad;
+        String departamento;
+        String codMateria;
         String codigo = edCodigo.getText().toString();
         String grupo = edGrupo.getText().toString();
         if(codigo.isEmpty() || grupo.isEmpty()){
@@ -132,13 +121,20 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
                     getApplication(), getResources().getString(R.string.error_ingresar_codigo_grupo),
                     Toast.LENGTH_LONG).show();
         }else{
+            facultad = codigo.substring(0, 2);
+            departamento = codigo.substring(2, 4);
+            codMateria = codigo.substring(4, 7);
             new LeerJSONCursoCodigoGrupo()
                     .execute(getResources().getString(R.string.urlService)
-                            +getResources().getString(R.string.urlConsultaCodigo)
-                            +codigo
-                            +getResources().getString(R.string.urlConsultaGrupo)
-                            +grupo);
-
+                            + getResources().getString(R.string.urlConsultaCodigoGrupo)
+                            + "&FACULTAD="
+                            + facultad
+                            + "&DEPARTAMENTO="
+                            + departamento
+                            + "&MATERIA="
+                            + codMateria
+                            + "&GRUPO="
+                            + grupo);
             edCodigo.setText("");
             edGrupo.setText("");
         }

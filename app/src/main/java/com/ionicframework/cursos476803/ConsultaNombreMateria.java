@@ -76,19 +76,9 @@ public class ConsultaNombreMateria extends AppCompatActivity {
 
                     for (int i = 0; i < calendarizacionJSON.length(); i++) {
                         JSONObject detalleCursoJSON = calendarizacionJSON.getJSONObject(i);
-                        String aula = (String) detalleCursoJSON.get("aula");
-                        String profesores = "";
-                        String horarios = "";
-                        JSONArray horariosJSON = detalleCursoJSON.getJSONArray("horario");
-                        JSONArray profesoresJSON = detalleCursoJSON.getJSONArray("profesor");
-
-                        for (int j = 0; j < horariosJSON.length(); j++) {
-                            horarios = horarios + "\n" + horariosJSON.getString(j);
-                        }
-
-                        for (int k = 0; k < horariosJSON.length(); k++) {
-                            profesores = profesores + "\n" + profesoresJSON.getString(k);
-                        }
+                        String aula= (String) detalleCursoJSON.get("aula");
+                        String profesores= (String) detalleCursoJSON.get("profesor")+"\n";
+                        String horarios= (String) detalleCursoJSON.get("horario")+"\n";
 
                         DetalleCalendario detalleCalendario = new DetalleCalendario(aula, horarios, profesores);
                         calendarizacion.add(detalleCalendario);
@@ -97,8 +87,7 @@ public class ConsultaNombreMateria extends AppCompatActivity {
                     String codigoMateria = cursoJson.getString("materia");
                     String grupoCurso = cursoJson.getString("grupo");
                     String nombreMateria = cursoJson.getString("nombreMateria");
-                    String idCurso = cursoJson.getString("id");
-                    Curso curso = new Curso(codigoMateria, grupoCurso, nombreMateria, idCurso, calendarizacion);
+                    Curso curso = new Curso(codigoMateria, grupoCurso, nombreMateria, calendarizacion);
                     cursos.add(curso);
                 }
 
@@ -144,7 +133,8 @@ public class ConsultaNombreMateria extends AppCompatActivity {
             nombreMateria=nombreMateria.replace(" ", "%20");
             new LeerJSONNombreMateria()
                     .execute(getResources().getString(R.string.urlService)
-                            +getResources().getString(R.string.urlConsultaMateria)
+                            +getResources().getString(R.string.urlConsultaNombre)
+                            +"&NOMBRE="
                             +nombreMateria);
 
             edNombreMateria.setText("");
