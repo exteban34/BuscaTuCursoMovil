@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.ionicframework.cursos476803.Model.Curso;
@@ -28,15 +29,19 @@ public class ListaMaterias extends AppCompatActivity {
     ListView lista;
     TextView tvNombre;
     Curso curso;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listado_materias);
         tvNombre = (TextView) findViewById(R.id.txtVw_nombreEnLista);
         lista = (ListView) findViewById(R.id.lstVw_listadoMaterias);
         nombreMateria = getIntent().getStringExtra("nombreMateria");
         Log.i("nombre", nombreMateria);
-        tvNombre.setText(nombreMateria);
+
+        tvNombre.setText((String) getIntent().getSerializableExtra("nombreMateria"));
         DataPass dp = (DataPass) getIntent().getSerializableExtra("cursos");
         cursos = dp.getCursos();
 

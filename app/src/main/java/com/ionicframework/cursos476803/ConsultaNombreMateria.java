@@ -61,8 +61,6 @@ public class ConsultaNombreMateria extends AppCompatActivity {
         }
 
         protected void onPostExecute(String result) {
-
-
             try {
                 pDialog.dismiss();
                 Log.i("result to Http GET", result);
@@ -93,7 +91,7 @@ public class ConsultaNombreMateria extends AppCompatActivity {
 
                 Intent e= new Intent("com.ionicframework.cursos476803.ListaMaterias");
                 e.putExtra("cursos", new DataPass(cursos));
-                e.putExtra("nombreMateria", cursos.get(0).getNombreMateria());
+                e.putExtra("nombreMateria", edNombreMateria.getText().toString());
                 startActivity(e);
 
 
@@ -136,9 +134,6 @@ public class ConsultaNombreMateria extends AppCompatActivity {
                             +getResources().getString(R.string.urlConsultaNombre)
                             +"&NOMBRE="
                             +nombreMateria);
-
-            edNombreMateria.setText("");
         }
     }
-
 }
