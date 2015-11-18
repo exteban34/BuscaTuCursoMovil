@@ -63,7 +63,7 @@ public class ConsultaNombreMateria extends AppCompatActivity {
         protected void onPostExecute(String result) {
             try {
                 pDialog.dismiss();
-                Log.i("result to Http GET", result);
+                Log.i("result to Http GET@@@@@", result);
                 JSONArray arreglo= new JSONArray(result);
                 ArrayList<Curso> cursos = new ArrayList<>();
 

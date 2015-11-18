@@ -16,6 +16,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/nombre_curso"
+                android:id="@+id/txtVw_grupo2"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Nombre del grupo "
+                android:id="@+id/txtVw_nombreCurso2"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/grupo_curso"
                 android:id="@+id/txtVw_grupo"
                 android:gravity="center"/>
@@ -23,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Nombre del grupo "
+                android:text="Numero del grupo "
                 android:id="@+id/txtVw_grupoCurso"
                 android:gravity="center"/>
         </TableRow>
