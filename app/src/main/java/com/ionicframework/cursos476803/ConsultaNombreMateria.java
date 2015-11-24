@@ -1,5 +1,6 @@
 package com.ionicframework.cursos476803;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class ConsultaNombreMateria extends AppCompatActivity {
 
     ProgressDialog pDialog;
     EditText edNombreMateria;
+    LeerJSONNombreMateria task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +54,17 @@ public class ConsultaNombreMateria extends AppCompatActivity {
             pDialog = new ProgressDialog(ConsultaNombreMateria.this);
             pDialog.setMessage(getString(R.string.carga_datos));
             pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
+            pDialog.setCancelable(true);
             pDialog.show();
+            pDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    task.cancel(true);
+                    cancel(true);
+                }
+            });
         }
+
 
         protected String doInBackground(String... urls) {
             return RequestGetJson.getJson(urls[0]);
@@ -125,12 +135,12 @@ public class ConsultaNombreMateria extends AppCompatActivity {
         String nombreMateria = edNombreMateria.getText().toString();
         if(nombreMateria.isEmpty()){
             Toast.makeText(
-                    getApplication(),getResources().getString(R.string.error_ingresar_nombre_materia),
+                    getApplication(), getResources().getString(R.string.error_ingresar_nombre_materia),
                     Toast.LENGTH_LONG).show();
-        } else{
-            nombreMateria=nombreMateria.replace(" ", "%20");
-            new LeerJSONNombreMateria()
-                    .execute(getResources().getString(R.string.urlService)
+        } else {
+            nombreMateria = nombreMateria.replace(" ", "%20");
+            task = new LeerJSONNombreMateria();
+                    task.execute(getResources().getString(R.string.urlService)
                             +getResources().getString(R.string.urlConsultaNombre)
                             +"&NOMBRE="
                             +nombreMateria);

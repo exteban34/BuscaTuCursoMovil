@@ -1,5 +1,6 @@
 package com.ionicframework.cursos476803;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
     ProgressDialog pDialog;
     EditText edCodigo;
     EditText edGrupo;
+    LeerJSONCursoCodigoGrupo task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +57,15 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
             pDialog = new ProgressDialog(ConsultaCodigoGrupo.this);
             pDialog.setMessage(getString(R.string.carga_datos));
             pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
+            pDialog.setCancelable(true);
             pDialog.show();
+            pDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    task.cancel(true);
+                    cancel(true);
+                }
+            });
         }
 
         protected String doInBackground(String... urls) {
@@ -127,8 +136,8 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
             facultad = codigo.substring(0, 2);
             departamento = codigo.substring(2, 4);
             codMateria = codigo.substring(4, 7);
-            new LeerJSONCursoCodigoGrupo()
-                    .execute(getResources().getString(R.string.urlService)
+            task = new LeerJSONCursoCodigoGrupo();
+                    task.execute(getResources().getString(R.string.urlService)
                             + getResources().getString(R.string.urlConsultaCodigoGrupo)
                             + "&FACULTAD="
                             + facultad
