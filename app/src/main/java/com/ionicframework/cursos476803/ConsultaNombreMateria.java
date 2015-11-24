@@ -63,7 +63,7 @@ public class ConsultaNombreMateria extends AppCompatActivity {
         protected void onPostExecute(String result) {
             try {
                 pDialog.dismiss();
-                Log.i("result to Http GET@@@@@", result);
+                Log.i("result to Http GET", result);
                 JSONArray arreglo= new JSONArray(result);
                 ArrayList<Curso> cursos = new ArrayList<>();
 
@@ -91,7 +91,7 @@ public class ConsultaNombreMateria extends AppCompatActivity {
 
                 Intent e= new Intent("com.ionicframework.cursos476803.ListaMaterias");
                 e.putExtra("cursos", new DataPass(cursos));
-                e.putExtra("nombreMateria", edNombreMateria.getText().toString());
+                e.putExtra("nombreMateria", edNombreMateria.getText().toString().toUpperCase());
                 startActivity(e);
 
 

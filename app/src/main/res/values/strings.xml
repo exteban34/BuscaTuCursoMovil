@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Busca Tu Curso</string>
+    <string name="copyright">© DRAI 2015</string>
+    <string name="facultad">Facultad de Ingeniería</string>
     <string name="consulta_nombre">Consultar Materia Por Nombre</string>
     <string name="consulta_codigo">Consultar Materia Por Codigo y Grupo</string>
     <string name="carga_datos">Cargando los Datos</string>
@@ -16,6 +18,7 @@
     <string name="error_consulta_Codigo_Grupo">No existe una materia con el codigo y grupo especificado.
     \nPor favor verifique la informacion ingresada.</string>
     <string name="error_ingresar_codigo_grupo">Por favor ingrese toda la información</string>
+    <string name="error_ingresar_codigo">Código de la materia incompleto</string>
     <string name="error_consulta_nombre_materia">No existe una materia con el nombre especificado.
     \nPor favor verifique la informacion ingresada.</string>
     <string name="error_ingresar_nombre_materia">Por favor ingrese el nombre de la materia.</string>

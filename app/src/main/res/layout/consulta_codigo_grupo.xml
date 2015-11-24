@@ -3,17 +3,25 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:gravity="center">
+    <ImageView
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_header"
+        android:layout_centerHorizontal="true"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -23,19 +31,20 @@
                 android:id="@+id/txtVw_codigoCurso" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/edtTxt_codigoCurso"
-                android:layout_column="2"
                 android:hint="@string/codigo_curso_hint"
                 android:inputType="numberDecimal"
                 android:maxLength="7"/>
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -45,35 +54,42 @@
                 android:id="@+id/txtVw_grupoCurso" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/edtTxt_grupoCurso"
-                android:layout_column="2"
                 android:hint="@string/grupo_curso_hint"
                 android:inputType="numberDecimal"
                 android:maxLength="2"/>
-        </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        </LinearLayout>
 
-            <Space
-                android:layout_width="20px"
-                android:layout_height="100dp" />
-        </TableRow>
+        <Button
+            style="@style/StyleBotones"
+            android:text="@string/consultar"
+            android:layout_marginTop="15dp"
+            android:id="@+id/btn_consultarCodigoGrupo"
+            android:onClick="clickConsultarCodigoCurso"/>
+    </LinearLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
 
-            <Button
-                style="@style/StyleBotones"
-                android:text="@string/consultar"
-                android:id="@+id/btn_consultarCodigoGrupo"
-                android:layout_span="3"
-                android:onClick="clickConsultarCodigoCurso"/>
-        </TableRow>
-    </TableLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copyright"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/facultad"
+            android:id="@+id/textView2"
+            android:layout_marginBottom="15dp"/>
+    </LinearLayout>
 </RelativeLayout>

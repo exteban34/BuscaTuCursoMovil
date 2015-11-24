@@ -93,7 +93,7 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
                 startActivity(e);
 
             }catch (JSONException e) {
-                if (e.getMessage().contains("Index")) {
+                if (e.getMessage().contains("estado")) {
                     Toast.makeText(
                             getApplicationContext(),
                             getResources().getString(R.string.error_consulta_Codigo_Grupo),
@@ -105,7 +105,6 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
                 }
             }
-
         }
     }
 
@@ -119,6 +118,10 @@ public class ConsultaCodigoGrupo extends AppCompatActivity {
         if(codigo.isEmpty() || grupo.isEmpty()){
             Toast.makeText(
                     getApplication(), getResources().getString(R.string.error_ingresar_codigo_grupo),
+                    Toast.LENGTH_LONG).show();
+        }else if (codigo.length()!=7){
+            Toast.makeText(
+                    getApplication(), getResources().getString(R.string.error_ingresar_codigo),
                     Toast.LENGTH_LONG).show();
         }else{
             facultad = codigo.substring(0, 2);

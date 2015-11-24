@@ -3,53 +3,58 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+
+    <ImageView
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_header"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true">
+
+
+        <Button
+            android:layout_width="fill_parent"
+            android:text="@string/consulta_codigo"
+            android:textAlignment="center"
+            android:id="@+id/btn_consultarCodigo"
+            style="@style/StyleBotones"
+            android:onClick="clickCodigo" />
+
+        <Button
+            android:text="@string/consulta_nombre"
+            android:textAlignment="center"
+            android:id="@+id/btn_consultarNombre"
+            style="@style/StyleBotones"
+            android:onClick="clickNombre"
+            android:layout_marginTop="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:gravity="center">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copyright"
+            android:id="@+id/textView" />
 
-            <Button
-                android:text="@string/consulta_codigo"
-                android:id="@+id/btn_consultarCodigo"
-                style="@style/StyleBotones"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_span="0"
-                android:onClick="clickCodigo"/>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Space
-                android:layout_width="300dp"
-                android:layout_height="20dp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <Button
-                android:text="@string/consulta_nombre"
-                android:id="@+id/btn_consultarNombre"
-                style="@style/StyleBotones"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_column="0"
-                android:onClick="clickNombre"/>
-        </TableRow>
-
-    </TableLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/facultad"
+            android:id="@+id/textView2"
+            android:layout_marginBottom="15dp"/>
+    </LinearLayout>
 
 </RelativeLayout>

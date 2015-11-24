@@ -72,8 +72,10 @@ public class DetalleCurso extends AppCompatActivity {
         String subAula;
         for(int i=0; i<curso.getCalendarizacion().size();i++){
             bloqueAula = curso.getCalendarizacion().get(i).getAula();
-            subAula = bloqueAula.substring(bloqueAula.length() - 3);
-            bloqueAula = bloqueAula.replace(subAula, "-" + subAula);
+            if(!bloqueAula.equalsIgnoreCase("virtual")) {
+                subAula = bloqueAula.substring(bloqueAula.length() - 3);
+                bloqueAula = bloqueAula.replace(subAula, "-" + subAula);
+            }
             aula.append(bloqueAula);
             if (i!=curso.getCalendarizacion().size()-1) aula.append("\n");
         }

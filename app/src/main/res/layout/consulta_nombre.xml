@@ -3,17 +3,25 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:gravity="center">
+    <ImageView
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_header"
+        android:layout_centerHorizontal="true"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -23,34 +31,39 @@
                 android:id="@+id/txtVw_grupoCurso" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/edtTxt_nombreCurso"
-                android:layout_column="2"
                 android:hint="@string/nombre_curso_hint"
                 android:inputType="text"/>
-        </TableRow>
+        </LinearLayout>
+        <Button
+            style="@style/StyleBotones"
+            android:layout_marginTop="15dp"
+            android:text="@string/consultar"
+            android:id="@+id/btn_consultarNombreGrupo"
+            android:onClick="clickConsultarPorNombre"/>
+    </LinearLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
 
-            <Space
-                android:layout_width="20px"
-                android:layout_height="50dp" />
-        </TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copyright"
+            android:id="@+id/textView" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <Button
-                style="@style/StyleBotones"
-                android:text="@string/consultar"
-                android:id="@+id/btn_consultarNombreGrupo"
-                android:layout_span="3"
-                android:onClick="clickConsultarPorNombre"/>
-        </TableRow>
-    </TableLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/facultad"
+            android:id="@+id/textView2"
+            android:layout_marginBottom="15dp"/>
+    </LinearLayout>
 </RelativeLayout>

@@ -54,10 +54,12 @@ public class ListaMaterias extends AppCompatActivity {
                     if (tvNombre != null){
                         tvNombre.setText(curso.getNombreMateria());
                     }
+                    /*
                     TextView tvGrupo = (TextView) view.findViewById(R.id.txtVw_grupoCurso);
                     if (tvGrupo != null){
                         tvGrupo.setText(curso.getGrupoCurso());
                     }
+                    */
                     TextView tvHorario = (TextView) view.findViewById(R.id.txtVw_horarioCurso);
                     if (tvHorario != null){
                         tvHorario.setText(curso.getCalendarizacion().get(0).getHorarios());
